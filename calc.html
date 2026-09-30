@@ -1,0 +1,209 @@
+<!DOCTYPE html> <html lang="ar" 
+dir="rtl"> <head>
+    <meta charset="UTF-8"> <meta 
+    name="viewport" 
+    content="width=device-width, 
+    initial-scale=1.0"> 
+    <title>sar_linx | الآلة 
+    الحاسبة التفاعلية 
+    للدرجات</title> <style>
+        body { font-family: 
+            Tahoma, sans-serif; 
+            background-color: 
+            #0f172a;
+            color: #f8fafc; 
+            margin: 0; padding: 
+            15px;
+        }
+        .container { max-width: 
+        600px; margin: 0 auto; } 
+        .header {
+            background: #0284c7; 
+            padding: 20px; 
+            border-radius: 12px; 
+            text-align: center; 
+            margin-bottom: 20px; 
+            box-shadow: 0 4px 6px 
+            rgba(0,0,0,0.3);
+        }
+        .header h1 { margin: 0 0 
+        5px 0; font-size: 22px; 
+        color: #fff; } .header p 
+        { margin: 5px 0; 
+        font-size: 13px; color: 
+        #e0f2fe; }
+        .card { background: 
+            #1e293b;
+            border-radius: 12px; 
+            padding: 15px; 
+            margin-bottom: 15px; 
+            border: 1px solid 
+            #334155;
+            box-shadow: 0 4px 6px 
+            rgba(0,0,0,0.2);
+        }
+        .card-title { font-size: 
+        15px; font-weight: bold; 
+        color: #38bdf8; 
+        margin-bottom: 10px; }
+        
+        .row { display: flex; 
+        gap: 10px; margin-bottom: 
+        10px; } input, select {
+            flex: 1; background: 
+            #0f172a;
+            border: 1px solid 
+            #334155;
+            color: #f8fafc; 
+            padding: 10px; 
+            border-radius: 8px; 
+            font-size: 13px;
+        }
+        input:focus { 
+        border-color: #38bdf8; 
+        outline: none; } .btn {
+            background: #059669; 
+            color: white; border: 
+            none; padding: 10px 
+            20px; border-radius: 
+            8px; font-size: 14px; 
+            font-weight: bold; 
+            cursor: pointer; 
+            width: 100%; 
+            transition: 
+            background 0.2s;
+        }
+        .btn:hover { background: 
+        #047857; }
+        .btn-danger { background: 
+        #dc2626; padding: 6px 
+        12px; font-size: 12px; 
+        width: auto; } 
+        .btn-danger:hover { 
+        background: #b91c1c; } 
+        .subject-item {
+            display: flex; 
+            justify-content: 
+            space-between; 
+            align-items: center; 
+            background: #0f172a; 
+            padding: 10px; 
+            border-radius: 8px; 
+            margin-bottom: 8px; 
+            border: 1px solid 
+            #334155;
+            animation: fadeIn 
+            0.3s ease-in-out;
+        }
+        @keyframes fadeIn { from 
+        { opacity: 0; transform: 
+        translateY(-5px); } to { 
+        opacity: 1; transform: 
+        translateY(0); } } 
+        .result-box {
+            background: #0284c7; 
+            color: white; 
+            padding: 15px; 
+            border-radius: 10px; 
+            text-align: center; 
+            margin-top: 20px; 
+            font-size: 16px; 
+            font-weight: bold; 
+            box-shadow: 0 4px 6px 
+            rgba(0,0,0,0.3);
+        }
+        .back-link { display: 
+        block; text-align: 
+        center; margin-top: 25px; 
+        color: #38bdf8; 
+        text-decoration: none; 
+        font-size: 13px; } 
+        .back-link:hover { 
+        text-decoration: 
+        underline; }
+    </style> </head> <body> <div 
+    class="container">
+        <div class="header"> 
+            <h1>🧮 الآلة الحاسبة 
+            التفاعلية 
+            للدرجات</h1> <p>منصة 
+            sar_linx | احسب 
+            درجاتك، مجموعك، 
+            ومعدلك بكل سهولة</p>
+        </div> <div class="card"> 
+            <div 
+            class="card-title">➕ 
+            إضافة مادة 
+            جديدة</div> <div 
+            class="row">
+                <input 
+                type="text" 
+                id="subName" 
+                placeholder="اسم 
+                المادة (مثال: 
+                رياضيات)"> <input 
+                type="number" 
+                id="subGrade" 
+                placeholder="الدرجة 
+                المحصول عليها">
+            </div> <div 
+            class="row">
+                <input 
+                type="number" 
+                id="subMax" 
+                placeholder="الدرجة 
+                الكاملة (مثال: 
+                100)" 
+                value="100">
+            </div> <button 
+            class="btn" 
+            onclick="addSubject()">إضافة 
+            المادة 
+            للقائمة</button>
+        </div> <div class="card"> 
+            <div 
+            class="card-title">📋 
+            قائمة المواد 
+            المضافة</div> <div 
+            id="subjectsList" 
+            style="color: 
+            #94a3b8; font-size: 
+            13px; text-align: 
+            center; padding: 
+            10px;">لم تقم بإضافة 
+            أي مواد بعد...</div>
+        </div> <div 
+        class="result-box" 
+        id="resultBox">
+            المجموع: 0 / 0 | 
+            النسبة: 0%
+        </div> <a 
+        href="index.html" 
+        class="back-link">← 
+        العودة إلى قائمة الخدمات 
+        الرئيسية</a>
+    </div> <script> let subjects 
+        = []; function 
+        addSubject() {
+            const nameInput = 
+            document.getElementById('subName'); 
+            const gradeInput = 
+            document.getElementById('subGrade'); 
+            const maxInput = 
+            document.getElementById('subMax'); 
+            const name = 
+            nameInput.value.trim() 
+            || "مادة دراسية";
+            const grade = 
+            parseFloat(gradeInput.value); 
+            const max = 
+            parseFloat(maxInput.value); 
+            if (isNaN(grade) || 
+            isNaN(max) || max <= 
+            0) {
+                alert('الرجاء 
+                إدخال أرقام صحيحة 
+                للدرجة والدرجة 
+                الكاملة!'); 
+                return;
+         
