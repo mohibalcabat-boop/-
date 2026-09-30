@@ -4,8 +4,8 @@ dir="rtl"> <head>
     name="viewport" 
     content="width=device-width, 
     initial-scale=1.0"> 
-    <title>sar_linx | صفحة 
-    الروابط الشخصية</title> 
+    <title>sar_linx | شجرة 
+    الروابط التفاعلية</title> 
     <style>
         :root {
             --bg-color: #1c1411; 
@@ -36,16 +36,32 @@ dir="rtl"> <head>
         border: 1px solid 
         var(--border-color); 
         box-shadow: 0 4px 10px 
-        rgba(0,0,0,0.4); } 
-        .header h1 { margin: 0 0 
-        5px 0; font-size: 22px; 
-        color: 
-        var(--accent-color); } 
-        .header p { margin: 5px 
-        0; font-size: 13px; 
-        color: var(--desc-color); 
-        }
+        rgba(0,0,0,0.4); }
         
+        /* حقول التعديل الحر 
+        للزائر */ .user-input-box 
+        { width: 90%; background: 
+        var(--bg-color); border: 
+        1px solid 
+        var(--accent-color); 
+        color: 
+        var(--accent-color); 
+        padding: 8px; 
+        border-radius: 8px; 
+        font-size: 16px; 
+        font-weight: bold; 
+        text-align: center; 
+        margin-bottom: 8px; } 
+        .user-input-desc { width: 
+        90%; background: 
+        var(--bg-color); border: 
+        1px solid 
+        var(--border-color); 
+        color: var(--desc-color); 
+        padding: 6px; 
+        border-radius: 6px; 
+        font-size: 13px; 
+        text-align: center; } 
         .link-card { background: 
         var(--card-bg); 
         border-radius: 12px; 
@@ -53,32 +69,28 @@ dir="rtl"> <head>
         margin-bottom: 15px; 
         border: 1px solid 
         var(--border-color); 
-        text-align: center; 
-        transition: transform 
-        0.2s; } .link-card:hover 
-        { transform: 
-        translateY(-2px); } 
-        .link-title { font-size: 
-        16px; font-weight: bold; 
-        color: 
-        var(--accent-color); 
-        margin-bottom: 5px; 
-        text-decoration: none; 
-        display: block; } 
-        .link-desc { font-size: 
-        13px; color: 
-        var(--desc-color); 
-        margin-bottom: 10px; } 
-        .edit-input { width: 90%; 
-        background: 
+        text-align: center; } 
+        .link-url-input { width: 
+        85%; background: 
         var(--bg-color); border: 
         1px solid 
         var(--border-color); 
-        color: var(--text-color); 
+        color: 
+        var(--accent-color); 
+        padding: 6px; 
+        border-radius: 6px; 
+        font-size: 13px; 
+        margin-bottom: 8px; 
+        text-align: center; } 
+        .link-desc-input { width: 
+        85%; background: 
+        var(--bg-color); border: 
+        1px solid 
+        var(--border-color); 
+        color: var(--desc-color); 
         padding: 6px; 
         border-radius: 6px; 
         font-size: 12px; 
-        margin-top: 5px; 
         text-align: center; }
         
         .action-section { 
@@ -109,113 +121,81 @@ dir="rtl"> <head>
         font-size: 13px; }
     </style> </head> <body> <div 
     class="container">
-        <div class="header"> 
-            <h1>ماهر عامر محمد 
-            نور</h1> <p>الشعبة: 
-            201 | صفحة الروابط 
-            الشخصية (Project 
-            04)</p> <p 
-            style="font-size: 
-            11px; margin-top: 
-            8px; color: 
-            #dcd6cd;">تتيح لك هذه 
-            الصفحة استعراض وتعديل 
-            وإرسال الروابط الخاصة 
-            بك بسهولة</p>
-        </div> <!-- رابط 1 --> 
-        <div class="link-card">
-            <a 
-            href="https://github.com" 
-            target="_blank" 
-            class="link-title">🌐 
-            حسابي على GitHub</a> 
-            <div 
-            class="link-desc">تصفح 
-            مستودعاتي البرمجية 
-            ومشاريع التطوير 
-            الخاصة بي</div> 
+        <div class="header"> <!-- 
+            الزائر يكتب اسمه 
+            بحرية --> <input 
+            type="text" 
+            class="user-input-box" 
+            value="اسم صاحب 
+            الصفحة / المشروع"> 
+            <!-- الزائر يكتب 
+            التفاصيل أو الشعبة 
+            بحرية --> <input 
+            type="text" 
+            class="user-input-desc" 
+            value="اكتب هنا الوصف 
+            أو الشعبة أو 
+            المعلومات التوضيحية">
+        </div> <!-- بطاقة رابط 1 
+        --> <div 
+        class="link-card">
             <input type="text" 
-            class="edit-input" 
-            value="تعديل الوصف: 
-            مستودع مشاريعي 
-            البرمجية" 
-            oninput="updateDesc(this, 
-            1)">
-        </div> <!-- رابط 2 --> 
-        <div class="link-card">
-            <a href="cv.html" 
-            class="link-title">📄 
-            السيرة الذاتية 
-            الرقمية (Project 
-            03)</a> <div 
-            class="link-desc">اطلع 
-            على السيرة الذاتية 
-            الخاصة بي والمهارات 
-            البرمجية</div> <input 
-            type="text" 
-            class="edit-input" 
-            value="تعديل الوصف: 
-            السيرة الذاتية 
-            الرقمية الرسمية" 
-            oninput="updateDesc(this, 
-            2)">
-        </div> <!-- رابط 3 --> 
-        <div class="link-card">
-            <a href="index.html" 
-            class="link-title">🏠 
-            لوحة التحكم الرئيسية 
-            (Dashboard)</a> <div 
-            class="link-desc">العودة 
-            للرئيسية واستعراض 
-            كافة مشاريع منصة 
-            sar_linx</div> <input 
-            type="text" 
-            class="edit-input" 
-            value="تعديل الوصف: 
-            العودة للوحة التحكم 
-            والخدمات" 
-            oninput="updateDesc(this, 
-            3)">
+            class="link-url-input" 
+            value="https://example.com"> 
+            <input type="text" 
+            class="link-desc-input" 
+            value="وصف توضيحي 
+            أبيض للرابط الأول 
+            (قابل للتعديل)">
+        </div> <!-- بطاقة رابط 2 
+        --> <div 
+        class="link-card">
+            <input type="text" 
+            class="link-url-input" 
+            value="https://github.com"> 
+            <input type="text" 
+            class="link-desc-input" 
+            value="وصف توضيحي 
+            أبيض للرابط الثاني 
+            (قابل للتعديل)">
+        </div> <!-- بطاقة رابط 3 
+        --> <div 
+        class="link-card">
+            <input type="text" 
+            class="link-url-input" 
+            value="index.html"> 
+            <input type="text" 
+            class="link-desc-input" 
+            value="العودة للوحة 
+            التحكم الرئيسية 
+            (sar_linx)">
         </div> <div 
         class="action-section">
             <button 
             class="action-btn" 
-            onclick="sendLinksInfo()">📤 
-            إرسال ومشاركة 
-            الروابط</button> <div 
+            onclick="shareMyLinks()">📤 
+            مشاركة هذه 
+            الصفحة</button> <div 
             id="toast" 
             class="toast">تم 
-            تجهيز وإرسال بيانات 
-            الروابط بنجاح! 
+            تجهيز البيانات 
+            للمشاركة بنجاح! 
             📋</div>
         </div> <a 
         href="index.html" 
         class="back-link">← 
-        العودة إلى القائمة 
+        العودة إلى لوحة التحكم 
         الرئيسية</a>
     </div> <script> function 
-        updateDesc(inputElement, 
-        id) {
-            const descCard = 
-            inputElement.previousElementSibling; 
-            descCard.textContent 
-            = 
-            inputElement.value.replace('تعديل 
-            الوصف: ', '');
-        }
-        function sendLinksInfo() 
-        {
+        shareMyLinks() {
             const textToShare = 
-            "صفحة الروابط الشخصية 
-            - ماهر عامر 
-            (sar_linx)\nالشعبة: 
-            201\nتفضل بزيارة 
-            الروابط والمشاريع 
-            الخاصة بي!"; if 
+            "شجرة الروابط الخاصة 
+            بي - تفضل بزيارة 
+            صفحتي!"; if 
             (navigator.share) {
                 navigator.share({title: 
-                'روابط ماهر 
-                عامر', text: 
+                'شجرة الروابط', 
+                text: 
                 textToShare, url: 
                 window.location.href}).catch(()=>{});
             } else {
@@ -230,4 +210,7 @@ dir="rtl"> <head>
                     t.style.display 
                     = 'none', 
                     3000);
-       
+                });
+            }
+        }
+    </script> </body> </html>
