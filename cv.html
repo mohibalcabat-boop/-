@@ -1,0 +1,202 @@
+<!DOCTYPE html> <html lang="ar" 
+dir="rtl"> <head>
+    <meta charset="UTF-8"> <meta 
+    name="viewport" 
+    content="width=device-width, 
+    initial-scale=1.0"> 
+    <title>sar_linx | السيرة 
+    الذاتية الرقمية</title> 
+    <style>
+        :root {
+            --bg-color: #1c1411; 
+            --card-bg: #2d201b; 
+            --text-color: 
+            #f5efe6;
+            --accent-color: 
+            #d4a373;
+            --border-color: 
+            #4a352a;
+        }
+        /* فلاتر الألوان 
+        التفاعلية */ 
+        body.theme-classic {
+            --bg-color: #1c1411; 
+            --card-bg: #2d201b; 
+            --accent-color: 
+            #d4a373;
+            --border-color: 
+            #4a352a;
+        }
+        body.theme-warm { 
+            --bg-color: #2b1700; 
+            --card-bg: #3d240c; 
+            --accent-color: 
+            #ffb703;
+            --border-color: 
+            #603808;
+        }
+        body.theme-dark { 
+            --bg-color: #0d0a09; 
+            --card-bg: #1a1513; 
+            --accent-color: 
+            #bc6c25;
+            --border-color: 
+            #332721;
+        }
+        body.theme-coffee { 
+            --bg-color: #241915; 
+            --card-bg: #362620; 
+            --accent-color: 
+            #dda15e;
+            --border-color: 
+            #583e35;
+        }
+        body.theme-modern { 
+            --bg-color: #181514; 
+            --card-bg: #26211f; 
+            --accent-color: 
+            #e09f3e;
+            --border-color: 
+            #433935;
+        }
+        body { font-family: 
+            Tahoma, sans-serif; 
+            background-color: 
+            var(--bg-color); 
+            color: 
+            var(--text-color); 
+            margin: 0; padding: 
+            15px; transition: 
+            background-color 0.3s 
+            ease;
+        }
+        .container { max-width: 
+            600px; margin: 0 
+            auto;
+        }
+        .header { background: 
+            var(--card-bg); 
+            padding: 25px 20px; 
+            border-radius: 14px; 
+            text-align: center; 
+            margin-bottom: 20px; 
+            border: 1px solid 
+            var(--border-color); 
+            box-shadow: 0 4px 
+            10px rgba(0,0,0,0.4);
+        }
+        /* خانة الصورة الشخصية */ 
+        .profile-img-container {
+            width: 90px; height: 
+            90px; margin: 0 auto 
+            15px auto; 
+            border-radius: 50%; 
+            background: 
+            var(--accent-color); 
+            display: flex; 
+            align-items: center; 
+            justify-content: 
+            center; font-size: 
+            40px; border: 3px 
+            solid 
+            var(--text-color); 
+            box-shadow: 0 4px 8px 
+            rgba(0,0,0,0.3);
+        }
+        .header h1 { margin: 0 0 
+            5px 0; font-size: 
+            22px; color: 
+            var(--accent-color);
+        }
+        .header p { margin: 5px 
+            0; font-size: 13px; 
+            color: #dcd6cd;
+        } 
+        /* قسم فلاتر الألوان 
+        التفاعلية */ 
+        .filters-section {
+            background: 
+            var(--card-bg); 
+            border-radius: 10px; 
+            padding: 12px; 
+            margin-bottom: 15px; 
+            border: 1px solid 
+            var(--border-color); 
+            text-align: center;
+        }
+        .filters-title { 
+            font-size: 12px; 
+            margin-bottom: 8px; 
+            color: 
+            var(--accent-color); 
+            font-weight: bold;
+        }
+        .filter-buttons { 
+            display: flex; 
+            justify-content: 
+            center; gap: 8px; 
+            flex-wrap: wrap;
+        }
+        .filter-btn { background: 
+            var(--bg-color); 
+            color: 
+            var(--text-color); 
+            border: 1px solid 
+            var(--border-color); 
+            padding: 5px 10px; 
+            border-radius: 6px; 
+            font-size: 11px; 
+            cursor: pointer; 
+            transition: 0.2s;
+        }
+        .filter-btn:hover { 
+            background: 
+            var(--accent-color); 
+            color: #1c1411;
+        }
+        .card { background: 
+            var(--card-bg); 
+            border-radius: 10px; 
+            padding: 15px; 
+            margin-bottom: 12px; 
+            border: 1px solid 
+            var(--border-color); 
+            transition: transform 
+            0.2s;
+        }
+        .card:hover { transform: 
+            translateY(-2px);
+        }
+        .card-title { font-size: 
+            15px; font-weight: 
+            bold; margin-bottom: 
+            8px; color: 
+            var(--accent-color); 
+            border-bottom: 1px 
+            solid 
+            var(--border-color); 
+            padding-bottom: 5px;
+        } 
+        .card-desc { font-size: 
+            13px; color: #dcd6cd; 
+            line-height: 1.6;
+        } 
+        /* زر المشاركة التفاعلي 
+        */ .share-section {
+            text-align: center; 
+            margin-top: 20px;
+        }
+        .share-btn { background: 
+            var(--accent-color); 
+            color: #1c1411; 
+            border: none; 
+            padding: 10px 20px; 
+            border-radius: 8px; 
+            font-size: 14px; 
+            font-weight: bold; 
+            cursor: pointer; 
+            box-shadow: 0 4px 6px 
+            rgba(0,0,0,0.2); 
+            transition: 0.2s;
+        }
+        .share-btn:hover {
