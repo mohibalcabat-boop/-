@@ -1,0 +1,71 @@
+<!DOCTYPE html> <html lang="ar" 
+dir="rtl"> <head>
+    <meta charset="UTF-8"> 
+    <title>معرض الوسائط</title> 
+    <style>
+        body { background: 
+        #0f172a; color: white; 
+        font-family: Tahoma; 
+        padding: 20px; 
+        text-align: center; } 
+        .box { background: 
+        #1e293b; padding: 20px; 
+        border-radius: 12px; 
+        margin-bottom: 20px; 
+        border: 2px dashed 
+        #ec4899; }
+        input { display: none; } 
+        .btn { background: 
+        #ec4899; color: white; 
+        padding: 10px 20px; 
+        border-radius: 8px; 
+        cursor: pointer; display: 
+        inline-block; 
+        font-weight: bold; } img, 
+        video { max-width: 100%; 
+        max-height: 300px; 
+        border-radius: 8px; 
+        margin-top: 10px; }
+    </style> </head> <body> 
+    <h1>🎬 معرض الوسائط 
+    التفاعلي</h1> <div 
+    class="box">
+        <p>اضغط لاختيار صورة أو 
+        فيديو من جهازك:</p> 
+        <label class="btn">
+            📁 اختر ملفاً <input 
+            type="file" 
+            accept="image/*,video/*" 
+            onchange="showFile(event)">
+        </label> </div> <div 
+    id="result"></div> <script>
+        function showFile(e) { 
+            const file = 
+            e.target.files[0]; if 
+            (!file) return; const 
+            res = 
+            document.getElementById('result'); 
+            const reader = new 
+            FileReader(); 
+            reader.onload = 
+            function(evt) {
+                let elem; if 
+                (file.type.startsWith('image/')) 
+                {
+                    elem = 
+                    document.createElement('img');
+                } else {
+                    elem = 
+                    document.createElement('video'); 
+                    elem.controls 
+                    = true;
+                }
+                elem.src = 
+                evt.target.result; 
+                res.innerHTML = 
+                ''; 
+                res.appendChild(elem);
+            }
+            reader.readAsDataURL(file);
+        }
+    </script> </body> </html>
