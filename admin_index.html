@@ -1,0 +1,203 @@
+<!DOCTYPE html> <html lang="ar" 
+dir="rtl"> <head>
+    <meta charset="UTF-8"> <meta 
+    name="viewport" 
+    content="width=device-width, 
+    initial-scale=1.0"> 
+    <title>إدارة روابط المواقع 
+    الخاصة</title> <style>
+        :root {
+            --bg-color: #0f172a; 
+            --card-bg: #1e293b; 
+            --primary: #38bdf8; 
+            --accent: #22c55e; 
+            --text: #f8fafc; 
+            --text-muted: 
+            #94a3b8;
+        }
+        body { font-family: 
+            Tahoma, sans-serif; 
+            background-color: 
+            var(--bg-color); 
+            color: var(--text); 
+            margin: 0; padding: 
+            20px;
+        }
+        .container { max-width: 
+            600px; margin: 0 
+            auto;
+        }
+        .header { background: 
+            linear-gradient(135deg, 
+            #3b82f6, #1d4ed8);
+            padding: 20px; 
+            border-radius: 16px; 
+            text-align: center; 
+            margin-bottom: 25px; 
+            box-shadow: 0 4px 
+            15px rgba(0,0,0,0.4);
+        }
+        .header h1 { margin: 0 0 
+            5px 0; font-size: 
+            22px;
+        }
+        .header p { margin: 0; 
+            font-size: 13px; 
+            color: #e2e8f0;
+        }
+        .site-card { 
+            background-color: 
+            var(--card-bg); 
+            border-radius: 12px; 
+            padding: 15px; 
+            margin-bottom: 15px; 
+            border: 1px solid 
+            #334155;
+            box-shadow: 0 2px 8px 
+            rgba(0,0,0,0.2); 
+            transition: transform 
+            0.2s;
+        }
+        .site-card:hover { 
+            transform: 
+            translateY(-2px); 
+            border-color: 
+            var(--primary);
+        }
+        .site-title { font-size: 
+            16px; font-weight: 
+            bold; color: 
+            var(--primary); 
+            margin-bottom: 5px;
+        }
+        .site-url { font-size: 
+            12px; color: 
+            var(--text-muted); 
+            background: #0f172a; 
+            padding: 8px; 
+            border-radius: 6px; 
+            word-break: 
+            break-all; 
+            margin-bottom: 12px; 
+            direction: ltr; 
+            text-align: left;
+        }
+        .btn-group { display: 
+            flex; gap: 10px;
+        }
+        .btn { flex: 1; padding: 
+            10px; border-radius: 
+            8px; text-align: 
+            center; 
+            text-decoration: 
+            none; font-size: 
+            13px; font-weight: 
+            bold; cursor: 
+            pointer; border: 
+            none; transition: 
+            opacity 0.2s;
+        }
+        .btn:hover { opacity: 
+            0.9;
+        }
+        .btn-open { 
+            background-color: 
+            var(--primary); 
+            color: #0f172a;
+        }
+        .btn-copy { 
+            background-color: 
+            var(--accent); color: 
+            white;
+        }
+    </style> </head> <body> <div 
+    class="container">
+        <!-- ترويسة اللوحة --> 
+        <div class="header">
+            <h1>🗂️ واجهة إدارة 
+            روابط المواقع</h1> 
+            <p>لوحتك السرية 
+            للوصول السريع لجميع 
+            مواقعك ومشاريعك 
+            المنفصلة</p>
+        </div> <!-- 1. بطاقة 
+        الموقع الأساسي / المنيو 
+        القديم --> <div 
+        class="site-card">
+            <div 
+            class="site-title">📁 
+            المنيو الرئيسي 
+            الأول</div> <div 
+            class="site-url">https://mohibalcabat-boop.github.io/اسم-المستودع-الأول/index.html</div> 
+            <div 
+            class="btn-group">
+                <a 
+                href="https://mohibalcabat-boop.github.io/اسم-المستودع-الأول/index.html" 
+                target="_blank" 
+                class="btn 
+                btn-open">فتح 
+                الموقع</a> 
+                <button 
+                class="btn 
+                btn-copy" 
+                onclick="navigator.clipboard.writeText('https://mohibalcabat-boop.github.io/اسم-المستودع-الأول/index.html'); 
+                alert('تم نسخ 
+                الرابط 
+                بنجاح!');">نسخ 
+                الرابط</button>
+            </div> </div> <!-- 2. 
+        بطاقة موقع المانجا أو أي 
+        مشروع جديد --> <div 
+        class="site-card">
+            <div 
+            class="site-title">⛩️ 
+            موقع المانجا أو 
+            المشروع الثاني</div> 
+            <div 
+            class="site-url">https://mohibalcabat-boop.github.io/اسم-المستودع-الثاني/</div> 
+            <div 
+            class="btn-group">
+                <a 
+                href="https://mohibalcabat-boop.github.io/اسم-المستودع-الثاني/" 
+                target="_blank" 
+                class="btn 
+                btn-open">فتح 
+                الموقع</a> 
+                <button 
+                class="btn 
+                btn-copy" 
+                onclick="navigator.clipboard.writeText('https://mohibalcabat-boop.github.io/اسم-المستودع-الثاني/'); 
+                alert('تم نسخ 
+                الرابط 
+                بنجاح!');">نسخ 
+                الرابط</button>
+            </div> </div> <!-- 📌 
+        (ملاحظة لك): كل ما سويت 
+        موقع جديد، انسخ الكود حق 
+        البطاقة اللي تحت وعدل 
+        الاسم والرابط حقها 
+        وألصقها هنا --> <!-- <div 
+        class="site-card">
+            <div 
+            class="site-title">✨ 
+            اسم الموقع 
+            الجديد</div> <div 
+            class="site-url">رابط_الموقع_الجديد_هنا</div> 
+            <div 
+            class="btn-group">
+                <a 
+                href="رابط_الموقع_الجديد_هنا" 
+                target="_blank" 
+                class="btn 
+                btn-open">فتح 
+                الموقع</a> 
+                <button 
+                class="btn 
+                btn-copy" 
+                onclick="navigator.clipboard.writeText('رابط_الموقع_الجديد_هنا'); 
+                alert('تم نسخ 
+                الرابط 
+                بنجاح!');">نسخ 
+                الرابط</button>
+            </div> </div> -->
+  
