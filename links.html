@@ -1,0 +1,233 @@
+<!DOCTYPE html> <html lang="ar" 
+dir="rtl"> <head>
+    <meta charset="UTF-8"> <meta 
+    name="viewport" 
+    content="width=device-width, 
+    initial-scale=1.0"> 
+    <title>sar_linx | صفحة 
+    الروابط الشخصية</title> 
+    <style>
+        :root {
+            --bg-color: #1c1411; 
+            --card-bg: #2d201b; 
+            --text-color: 
+            #f5efe6;
+            --desc-color: 
+            #ffffff;
+            --accent-color: 
+            #d4a373;
+            --border-color: 
+            #4a352a;
+        }
+        body { font-family: 
+        Tahoma, sans-serif; 
+        background-color: 
+        var(--bg-color); color: 
+        var(--text-color); 
+        margin: 0; padding: 15px; 
+        }
+        .container { max-width: 
+        600px; margin: 0 auto; } 
+        .header { background: 
+        var(--card-bg); padding: 
+        25px 20px; border-radius: 
+        14px; text-align: center; 
+        margin-bottom: 20px; 
+        border: 1px solid 
+        var(--border-color); 
+        box-shadow: 0 4px 10px 
+        rgba(0,0,0,0.4); } 
+        .header h1 { margin: 0 0 
+        5px 0; font-size: 22px; 
+        color: 
+        var(--accent-color); } 
+        .header p { margin: 5px 
+        0; font-size: 13px; 
+        color: var(--desc-color); 
+        }
+        
+        .link-card { background: 
+        var(--card-bg); 
+        border-radius: 12px; 
+        padding: 15px; 
+        margin-bottom: 15px; 
+        border: 1px solid 
+        var(--border-color); 
+        text-align: center; 
+        transition: transform 
+        0.2s; } .link-card:hover 
+        { transform: 
+        translateY(-2px); } 
+        .link-title { font-size: 
+        16px; font-weight: bold; 
+        color: 
+        var(--accent-color); 
+        margin-bottom: 5px; 
+        text-decoration: none; 
+        display: block; } 
+        .link-desc { font-size: 
+        13px; color: 
+        var(--desc-color); 
+        margin-bottom: 10px; } 
+        .edit-input { width: 90%; 
+        background: 
+        var(--bg-color); border: 
+        1px solid 
+        var(--border-color); 
+        color: var(--text-color); 
+        padding: 6px; 
+        border-radius: 6px; 
+        font-size: 12px; 
+        margin-top: 5px; 
+        text-align: center; }
+        
+        .action-section { 
+        text-align: center; 
+        margin-top: 25px; } 
+        .action-btn { background: 
+        var(--accent-color); 
+        color: #1c1411; border: 
+        none; padding: 12px 25px; 
+        border-radius: 8px; 
+        font-size: 14px; 
+        font-weight: bold; 
+        cursor: pointer; 
+        box-shadow: 0 4px 8px 
+        rgba(0,0,0,0.3); } 
+        .action-btn:hover { 
+        opacity: 0.9; } .toast { 
+        margin-top: 10px; 
+        font-size: 12px; color: 
+        var(--accent-color); 
+        display: none; } 
+        .back-link { display: 
+        block; text-align: 
+        center; margin-top: 20px; 
+        color: 
+        var(--accent-color); 
+        text-decoration: none; 
+        font-size: 13px; }
+    </style> </head> <body> <div 
+    class="container">
+        <div class="header"> 
+            <h1>ماهر عامر محمد 
+            نور</h1> <p>الشعبة: 
+            201 | صفحة الروابط 
+            الشخصية (Project 
+            04)</p> <p 
+            style="font-size: 
+            11px; margin-top: 
+            8px; color: 
+            #dcd6cd;">تتيح لك هذه 
+            الصفحة استعراض وتعديل 
+            وإرسال الروابط الخاصة 
+            بك بسهولة</p>
+        </div> <!-- رابط 1 --> 
+        <div class="link-card">
+            <a 
+            href="https://github.com" 
+            target="_blank" 
+            class="link-title">🌐 
+            حسابي على GitHub</a> 
+            <div 
+            class="link-desc">تصفح 
+            مستودعاتي البرمجية 
+            ومشاريع التطوير 
+            الخاصة بي</div> 
+            <input type="text" 
+            class="edit-input" 
+            value="تعديل الوصف: 
+            مستودع مشاريعي 
+            البرمجية" 
+            oninput="updateDesc(this, 
+            1)">
+        </div> <!-- رابط 2 --> 
+        <div class="link-card">
+            <a href="cv.html" 
+            class="link-title">📄 
+            السيرة الذاتية 
+            الرقمية (Project 
+            03)</a> <div 
+            class="link-desc">اطلع 
+            على السيرة الذاتية 
+            الخاصة بي والمهارات 
+            البرمجية</div> <input 
+            type="text" 
+            class="edit-input" 
+            value="تعديل الوصف: 
+            السيرة الذاتية 
+            الرقمية الرسمية" 
+            oninput="updateDesc(this, 
+            2)">
+        </div> <!-- رابط 3 --> 
+        <div class="link-card">
+            <a href="index.html" 
+            class="link-title">🏠 
+            لوحة التحكم الرئيسية 
+            (Dashboard)</a> <div 
+            class="link-desc">العودة 
+            للرئيسية واستعراض 
+            كافة مشاريع منصة 
+            sar_linx</div> <input 
+            type="text" 
+            class="edit-input" 
+            value="تعديل الوصف: 
+            العودة للوحة التحكم 
+            والخدمات" 
+            oninput="updateDesc(this, 
+            3)">
+        </div> <div 
+        class="action-section">
+            <button 
+            class="action-btn" 
+            onclick="sendLinksInfo()">📤 
+            إرسال ومشاركة 
+            الروابط</button> <div 
+            id="toast" 
+            class="toast">تم 
+            تجهيز وإرسال بيانات 
+            الروابط بنجاح! 
+            📋</div>
+        </div> <a 
+        href="index.html" 
+        class="back-link">← 
+        العودة إلى القائمة 
+        الرئيسية</a>
+    </div> <script> function 
+        updateDesc(inputElement, 
+        id) {
+            const descCard = 
+            inputElement.previousElementSibling; 
+            descCard.textContent 
+            = 
+            inputElement.value.replace('تعديل 
+            الوصف: ', '');
+        }
+        function sendLinksInfo() 
+        {
+            const textToShare = 
+            "صفحة الروابط الشخصية 
+            - ماهر عامر 
+            (sar_linx)\nالشعبة: 
+            201\nتفضل بزيارة 
+            الروابط والمشاريع 
+            الخاصة بي!"; if 
+            (navigator.share) {
+                navigator.share({title: 
+                'روابط ماهر 
+                عامر', text: 
+                textToShare, url: 
+                window.location.href}).catch(()=>{});
+            } else {
+                navigator.clipboard.writeText(textToShare).then(() 
+                => {
+                    const t = 
+                    document.getElementById('toast'); 
+                    t.style.display 
+                    = 'block'; 
+                    setTimeout(() 
+                    => 
+                    t.style.display 
+                    = 'none', 
+                    3000);
+       
