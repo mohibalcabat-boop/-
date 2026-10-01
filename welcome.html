@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sar_linx | المعرض المدرسي</title>
+    <style>
+        body { font-family: Tahoma, sans-serif; background-color: #0f172a; color: #f8fafc; margin: 0; padding: 15px; direction: rtl; }
+        .container { max-width: 600px; margin: 0 auto; }
+        .header { background: #0284c7; padding: 20px; border-radius: 10px; text-align: center; margin-bottom: 15px; }
+        .card { background: #1e293b; border-radius: 10px; padding: 15px; margin-bottom: 15px; border: 1px solid #334155; }
+        .btn { background: #059669; color: white; border: none; padding: 10px; border-radius: 6px; width: 100%; font-weight: bold; cursor: pointer; margin-top: 5px; }
+        .form-control { width: 100%; background: #0f172a; border: 1px solid #334155; color: #fff; padding: 8px; border-radius: 6px; box-sizing: border-box; margin-bottom: 8px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h2>معرض المشاريع والبحوث</h2>
+        </div>
+        <div class="card">
+            <h3>إضافة مشروع جديد</h3>
+            <input type="text" id="pTitle" class="form-control" placeholder="عنوان البحث أو المشروع">
+            <textarea id="pDesc" class="form-control" placeholder="وصف مختصر..."></textarea>
+            <button class="btn" onclick="addProj()">إضافة للمعرض</button>
+        </div>
+        <div class="card">
+            <h3>المشاريع المضافة</h3>
+            <div id="pList">لا توجد مشاريع حالياً.</div>
+        </div>
+    </div>
+    <script>
+        let list = [];
+        function addProj() {
+            let t = document.getElementById("pTitle").value;
+            let d = document.getElementById("pDesc").value;
+            if(!t) { alert("اكتب العنوان"); return; }
+            list.push({t, d});
+            document.getElementById("pTitle").value = "";
+            document.getElementById("pDesc").value = "";
+            let html = "";
+            list.forEach(item => {
+                html += `<div style="border-bottom:1px solid #334155; padding:8px 0;"><h4>${item.t}</h4><p>${item.d}</p></div>`;
+            });
+            document.getElementById("pList").innerHTML = html;
+        }
+    </script>
+</body>
+</html>
