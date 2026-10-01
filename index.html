@@ -14,6 +14,8 @@
             --border-color: #334155;
             --btn-bg: #059669;
             --btn-hover: #047857;
+            --btn-project: #0284c7;
+            --btn-project-hover: #0369a1;
         }
         body { 
             font-family: Tahoma, sans-serif; 
@@ -81,6 +83,19 @@
             box-shadow: 0 2px 4px rgba(0,0,0,0.2);
         }
         .visit-btn:hover { background: var(--btn-hover); }
+
+        .project-btn {
+            background: var(--btn-project);
+            color: white;
+            text-decoration: none;
+            padding: 8px 14px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: bold;
+            transition: background 0.2s;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        .project-btn:hover { background: var(--btn-project-hover); }
 
         .footer-note { 
             text-align: center; 
@@ -158,12 +173,12 @@
             </div>
         </div>
 
-        <!-- المشروع السابع (المحدث والمربوط بالمعرض التفاعلي الجديد) -->
+        <!-- المشروع السابع (المعدل ليحتوي على زر رابط المشاريع وزر المعاينة) -->
         <div class="project-card">
             <div class="project-title">موقع #07: معرض المشاريع والبحوث التفاعلي</div>
             <div class="project-desc">صفحة ترحيبية وتفاعلية ممتدة للأسفل، مع إمكانية إرفاق الصور، البحوث، وتعديل بيانات الطالب.</div>
             <div class="project-footer">
-                <span class="price-tag">جاهز للبيع</span>
+                <a href="welcome.html" class="project-btn">رابط المشاريع 🚀</a>
                 <a href="welcome2.html" class="visit-btn">معاينة القالب 🌐</a>
             </div>
         </div>
