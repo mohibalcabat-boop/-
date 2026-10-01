@@ -1,0 +1,208 @@
+<!DOCTYPE html> <html lang="ar" 
+dir="rtl"> <head>
+    <meta charset="UTF-8"> <meta 
+    name="viewport" 
+    content="width=device-width, 
+    initial-scale=1.0"> 
+    <title>sar_linx | مكتبة 
+    المصادر والروابط</title> 
+    <style>
+        body { font-family: 
+            Tahoma, sans-serif; 
+            background-color: 
+            #0f172a;
+            color: #f8fafc; 
+            margin: 0; padding: 
+            15px;
+        }
+        .container { max-width: 
+        600px; margin: 0 auto; } 
+        .header {
+            background: #0284c7; 
+            padding: 20px; 
+            border-radius: 12px; 
+            text-align: center; 
+            margin-bottom: 20px; 
+            box-shadow: 0 4px 6px 
+            rgba(0,0,0,0.3);
+        }
+        .header h1 { margin: 0 0 
+        5px 0; font-size: 22px; 
+        color: #fff; } .header p 
+        { margin: 5px 0; 
+        font-size: 13px; color: 
+        #e0f2fe; }
+        .card { background: 
+            #1e293b;
+            border-radius: 12px; 
+            padding: 15px; 
+            margin-bottom: 15px; 
+            border: 1px solid 
+            #334155;
+            box-shadow: 0 4px 6px 
+            rgba(0,0,0,0.2);
+        }
+        .card-title { font-size: 
+        15px; font-weight: bold; 
+        color: #38bdf8; 
+        margin-bottom: 10px; }
+        
+        .row { display: flex; 
+        gap: 10px; margin-bottom: 
+        10px; } input {
+            flex: 1; background: 
+            #0f172a;
+            border: 1px solid 
+            #334155;
+            color: #f8fafc; 
+            padding: 10px; 
+            border-radius: 8px; 
+            font-size: 13px;
+        }
+        input:focus { 
+        border-color: #38bdf8; 
+        outline: none; } .btn {
+            background: #059669; 
+            color: white; border: 
+            none; padding: 10px 
+            20px; border-radius: 
+            8px; font-size: 14px; 
+            font-weight: bold; 
+            cursor: pointer; 
+            width: 100%; 
+            transition: 
+            background 0.2s;
+        }
+        .btn:hover { background: 
+        #047857; }
+        .btn-danger { background: 
+        #dc2626; padding: 5px 
+        10px; font-size: 12px; 
+        width: auto; } 
+        .btn-danger:hover { 
+        background: #b91c1c; } 
+        .lib-item {
+            display: flex; 
+            justify-content: 
+            space-between; 
+            align-items: center; 
+            background: #0f172a; 
+            padding: 12px; 
+            border-radius: 8px; 
+            margin-bottom: 8px; 
+            border: 1px solid 
+            #334155;
+            animation: fadeIn 
+            0.3s ease-in-out;
+        }
+        @keyframes fadeIn { from 
+        { opacity: 0; transform: 
+        translateY(-5px); } to { 
+        opacity: 1; transform: 
+        translateY(0); } } 
+        .lib-info { flex: 1; } 
+        .lib-name { font-size: 
+        14px; font-weight: bold; 
+        color: #38bdf8; 
+        margin-bottom: 3px; } 
+        .lib-url { font-size: 
+        11px; color: #94a3b8; 
+        word-break: break-all; 
+        text-decoration: none; 
+        display: block; } 
+        .lib-url:hover { color: 
+        #38bdf8; text-decoration: 
+        underline; } .action-box 
+        { text-align: center; 
+        margin-top: 20px; } 
+        .toast { margin-top: 
+        10px; font-size: 12px; 
+        color: #38bdf8; display: 
+        none; } .back-link { 
+        display: block; 
+        text-align: center; 
+        margin-top: 25px; color: 
+        #38bdf8; text-decoration: 
+        none; font-size: 13px; } 
+        .back-link:hover { 
+        text-decoration: 
+        underline; }
+    </style> </head> <body> <div 
+    class="container">
+        <div class="header"> 
+            <h1>📚 مكتبة الروابط 
+            والمصادر</h1> <p>منصة 
+            sar_linx | اجمع ونظم 
+            أهم المواقع والمراجع 
+            التعليمية بسهولة</p>
+        </div> <div class="card"> 
+            <div 
+            class="card-title">➕ 
+            إضافة مصدر جديد</div> 
+            <div class="row">
+                <input 
+                type="text" 
+                id="libName" 
+                placeholder="عنوان 
+                المصدر أو 
+                الموقع">
+            </div> <div 
+            class="row">
+                <input 
+                type="text" 
+                id="libUrl" 
+                placeholder="رابط 
+                الموقع 
+                (https://example.com)" 
+                value="https://">
+            </div> <button 
+            class="btn" 
+            onclick="addLibraryItem()">إضافة 
+            إلى المكتبة</button>
+        </div> <div class="card"> 
+            <div 
+            class="card-title">🔗 
+            قائمة المصادر 
+            والمراجع</div> <div 
+            id="libraryList" 
+            style="color: 
+            #94a3b8; font-size: 
+            13px; text-align: 
+            center; padding: 
+            10px;">لم تقم بإضافة 
+            أي مصادر بعد...</div>
+        </div> <div 
+        class="action-box">
+            <button class="btn" 
+            style="background:#0284c7;" 
+            onclick="shareLibrary()">📤 
+            مشاركة 
+            المكتبة</button> <div 
+            id="toast" 
+            class="toast">تم 
+            تجهيز رابط المكتبة 
+            للمشاركة بنجاح! 
+            📋</div>
+        </div> <a 
+        href="index.html" 
+        class="back-link">← 
+        العودة إلى قائمة الخدمات 
+        الرئيسية</a>
+    </div> <script> let items = 
+        []; function 
+        addLibraryItem() {
+            const nameInput = 
+            document.getElementById('libName'); 
+            const urlInput = 
+            document.getElementById('libUrl'); 
+            const name = 
+            nameInput.value.trim(); 
+            const url = 
+            urlInput.value.trim(); 
+            if (!name || !url) {
+                alert('الرجاء 
+                كتابة اسم المصدر 
+                والرابط معاً!'); 
+                return;
+            }
+ 
