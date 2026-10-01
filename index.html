@@ -1,180 +1,196 @@
-
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>sar_linx | قائمة الخدمات</title>
+    <title>sar_linx | لوحة التحكم الرئيسية للمشاريع</title>
     <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-color: #f8fafc;
+            --desc-color: #94a3b8;
+            --accent-color: #38bdf8;
+            --border-color: #334155;
+            --btn-bg: #059669;
+            --btn-hover: #047857;
+        }
         body { 
             font-family: Tahoma, sans-serif; 
-            background-color: #0f172a; 
-            color: #f8fafc; 
+            background-color: var(--bg-color); 
+            color: var(--text-color); 
             margin: 0; 
             padding: 15px; 
         }
+        .container { max-width: 600px; margin: 0 auto; }
+        
         .header { 
-            background: #0284c7; 
-            padding: 20px; 
-            border-radius: 12px; 
+            background: linear-gradient(135deg, #0284c7, #0369a1); 
+            padding: 25px 20px; 
+            border-radius: 14px; 
             text-align: center; 
-            margin-bottom: 20px; 
-            box-shadow: 0 4px 6px rgba(0,0,0,0.3); 
+            margin-bottom: 25px; 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.4); 
         }
-        .header h1 { 
-            margin: 0 0 10px 0; 
-            font-size: 24px; 
+        .header h1 { margin: 0 0 8px 0; font-size: 24px; color: #fff; }
+        .header p { margin: 5px 0; font-size: 13px; color: #e0f2fe; }
+
+        .project-card { 
+            background: var(--card-bg); 
+            border-radius: 12px; 
+            padding: 18px; 
+            margin-bottom: 15px; 
+            border: 1px solid var(--border-color); 
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            transition: transform 0.2s, border-color 0.2s;
         }
-        .header p { 
-            margin: 5px 0; 
-            font-size: 14px; 
-            line-height: 1.6; 
-        } 
-        .card { 
-            background: #1e293b; 
-            border-radius: 10px; 
-            padding: 15px; 
-            margin-bottom: 12px; 
-            border: 1px solid #334155; 
+        .project-card:hover {
+            transform: translateY(-2px);
+            border-color: var(--accent-color);
         }
-        .card-title { 
-            font-size: 16px; 
-            font-weight: bold; 
-            margin-bottom: 5px; 
-            color: #38bdf8; 
-        } 
-        .card-desc { 
-            font-size: 13px; 
-            color: #94a3b8; 
-            margin-bottom: 10px; 
-        } 
-        .price-row { 
+        
+        .project-title { font-size: 16px; font-weight: bold; color: var(--accent-color); margin-bottom: 8px; }
+        .project-desc { font-size: 13px; color: var(--desc-color); margin-bottom: 15px; line-height: 1.5; }
+        
+        .project-footer { 
             display: flex; 
             justify-content: space-between; 
             align-items: center; 
-        } 
-        .price { 
-            display: inline-block; 
-            background: #059669; 
-            color: white; 
-            padding: 4px 10px; 
-            border-radius: 6px; 
-            font-size: 12px; 
-            font-weight: bold; 
-        } 
-        .btn-link { 
+            border-top: 1px solid var(--border-color); 
+            padding-top: 12px; 
+        }
+        
+        .price-tag { 
             background: #0284c7; 
             color: white; 
-            text-decoration: none; 
-            padding: 5px 12px; 
+            padding: 6px 12px; 
             border-radius: 6px; 
             font-size: 12px; 
             font-weight: bold; 
-        } 
-        .btn-link:hover { 
-            background: #0369a1; 
-        } 
-        .coming-soon { 
+        }
+        
+        .visit-btn { 
+            background: var(--btn-bg); 
+            color: white; 
+            text-decoration: none; 
+            padding: 8px 18px; 
+            border-radius: 8px; 
+            font-size: 13px; 
+            font-weight: bold; 
+            transition: background 0.2s;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        .visit-btn:hover { background: var(--btn-hover); }
+
+        .footer-note { 
+            text-align: center; 
+            margin-top: 30px; 
             font-size: 12px; 
-            color: #94a3b8; 
+            color: var(--desc-color); 
         }
     </style>
-</head> 
-<body> 
-    <div class="header">
-        <h1>sar_linx 🚀</h1> 
-        <p>المطور: ماهر عامر محمد نور | الشعبة: 201</p> 
-        <p>مشروع تقني لإنشاء وتصميم مواقع وسكربتات تفاعلية مخصصة لكل طالب حسب الطلب.</p>
-    </div> 
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>sar_linx 🚀</h1>
+            <p>منصة المشاريع والأدوات الرقمية التفاعلية الاحترافية</p>
+            <p>لوحة التحكم والتشغيل الموحدة (9 مشاريع جاهزة)</p>
+        </div>
 
-    <!-- موقع المانجا (مفعل) --> 
-    <div class="card">
-        <div class="card-title">موقع #01: موقع المانجا والأنمي المفضل</div> 
-        <div class="card-desc">عرض أفضل المانجات والأنميات وتقييماتك الشخصية لها بشكل تفاعلي.</div> 
-        <div class="price-row">
-            <span class="price">3 ريال</span> 
-            <a href="manga.html" class="btn-link" target="_blank">معاينة القالب 🌐</a>
-        </div> 
-    </div> 
+        <!-- المشروع الأول -->
+        <div class="project-card">
+            <div class="project-title">موقع #01: منصة المانجا وقراءة القصص</div>
+            <div class="project-desc">واجهة ويب تفاعلية لعرض الفصول وقراءة القصص المصورة بتصميم فخم وسلس.</div>
+            <div class="project-footer">
+                <span class="price-tag">جاهز للبيع</span>
+                <a href="manga.html" class="visit-btn">معاينة القالب 🌐</a>
+            </div>
+        </div>
 
-    <!-- موقع عرض الصور والفيديوهات (مفعل) --> 
-    <div class="card">
-        <div class="card-title">موقع #02: موقع عرض الصور والفيديوهات</div> 
-        <div class="card-desc">معرض شخصي مرتب لعرض الوسائط والذكريات بشكل تفاعلي.</div> 
-        <div class="price-row">
-            <span class="price">3 ريال</span> 
-            <a href="media_index.html" class="btn-link" target="_blank">معاينة القالب 🌐</a>
-        </div> 
-    </div> 
+        <!-- المشروع الثاني -->
+        <div class="project-card">
+            <div class="project-title">موقع #02: دليل الفهارس و الوسائط المتعددة</div>
+            <div class="project-desc">دليل ويب مرن لتنظيم وعرض ملفات الوسائط، الروابط، والمحتويات الرقمية.</div>
+            <div class="project-footer">
+                <span class="price-tag">جاهز للبيع</span>
+                <a href="media_index.html" class="visit-btn">معاينة القالب 🌐</a>
+            </div>
+        </div>
 
-    <!-- الموقع الثالث (مفعل ومربوط بـ cv.html) --> 
-    <div class="card">
-        <div class="card-title">موقع #03: السيرة الذاتية الرقمية (CV)</div> 
-        <div class="card-desc">صفحة ويب احترافية تعرض خبراتك ومهاراتك بشكل أنيق.</div> 
-        <div class="price-row">
-            <span class="price">3 ريال</span> 
-            <a href="cv.html" class="btn-link" target="_blank">معاينة القالب 🌐</a>
-        </div> 
-    </div> 
+        <!-- المشروع الثالث -->
+        <div class="project-card">
+            <div class="project-title">موقع #03: السيرة الذاتية الرقمية (CV)</div>
+            <div class="project-desc">نموذج سيرة ذاتية تفاعلي يتيح للزائر تعبئة بياناته ونشرها بكل سهولة واحترافية.</div>
+            <div class="project-footer">
+                <span class="price-tag">جاهز للبيع</span>
+                <a href="cv.html" class="visit-btn">معاينة القالب 🌐</a>
+            </div>
+        </div>
 
-    <!-- الموقع الرابع (مفعل ومربوط بـ links.html) --> 
-    <div class="card">
-        <div class="card-title">موقع #04: صفحة الروابط الشخصية (Bio Link)</div> 
-        <div class="card-desc">أداة تفاعلية عامة لجمع وتعديل الروابط الشخصية في مكان واحد.</div> 
-        <div class="price-row">
-            <span class="price">3 ريال</span> 
-            <a href="links.html" class="btn-link" target="_blank">معاينة القالب 🌐</a>
-        </div> 
-    </div> 
+        <!-- المشروع الرابع -->
+        <div class="project-card">
+            <div class="project-title">موقع #04: شجرة الروابط الشخصية (Bio Links)</div>
+            <div class="project-desc">منصة تجميع روابط منصات التواصل والسابستاك في صفحة شخصية واحدة أنيقة.</div>
+            <div class="project-footer">
+                <span class="price-tag">جاهز للبيع</span>
+                <a href="links.html" class="visit-btn">معاينة القالب 🌐</a>
+            </div>
+        </div>
 
-    <!-- الموقع الخامس --> 
-    <div class="card">
-        <div class="card-title">موقع #05: آلة حاسبة تفاعلية للدرجات</div> 
-        <div class="card-desc">سكربت تفاعلي لحساب المعدل والمجموع المدرسي بسهولة.</div> 
-        <div class="price-row">
-            <span class="price">3 ريال</span> 
-            <span class="coming-soon">قريباً...</span>
-        </div> 
-    </div> 
+        <!-- المشروع الخامس -->
+        <div class="project-card">
+            <div class="project-title">موقع #05: الآلة الحاسبة التفاعلية للدرجات والمعدل</div>
+            <div class="project-desc">سكربت تفاعلي متكامل لحساب الدرجات، المجموع، والنسبة والمعدل المدرسي.</div>
+            <div class="project-footer">
+                <span class="price-tag">جاهز للبيع</span>
+                <a href="calc.html" class="visit-btn">معاينة القالب 🌐</a>
+            </div>
+        </div>
 
-    <!-- الموقع السادس --> 
-    <div class="card">
-        <div class="card-title">موقع #06: جدول المهام والمهام اليومية (To-Do)</div> 
-        <div class="card-desc">تطبيق ويب صغير لتنظيم المهام وإنجازها بكفاءة.</div> 
-        <div class="price-row">
-            <span class="price">3 ريال</span> 
-            <span class="coming-soon">قريباً...</span>
-        </div> 
-    </div> 
+        <!-- المشروع السادس -->
+        <div class="project-card">
+            <div class="project-title">موقع #06: جدول المهام اليومية (To-Do List)</div>
+            <div class="project-desc">تطبيق ويب صغير لتنظيم المهام، تحديد الأولويات، ومتابعة الإنجاز بكفاءة.</div>
+            <div class="project-footer">
+                <span class="price-tag">جاهز للبيع</span>
+                <a href="todo.html" class="visit-btn">معاينة القالب 🌐</a>
+            </div>
+        </div>
 
-    <!-- الموقع السابع --> 
-    <div class="card">
-        <div class="card-title">موقع #07: صفحة ترحيبية للمشاريع المدرسية</div> 
-        <div class="card-desc">واجهة عرض رئيسية ترحيبية لأي مشروع أو بحث تقني.</div> 
-        <div class="price-row">
-            <span class="price">3 ريال</span> 
-            <span class="coming-soon">قريباً...</span>
-        </div> 
-    </div> 
+        <!-- المشروع السابع -->
+        <div class="project-card">
+            <div class="project-title">موقع #07: صفحة ترحيبية للمشاريع المدرسية</div>
+            <div class="project-desc">واجهة عرض رئيسية ترحيبية قابلة للتخصيص لأي مشروع أو بحث تقني.</div>
+            <div class="project-footer">
+                <span class="price-tag">جاهز للبيع</span>
+                <a href="welcome.html" class="visit-btn">معاينة القالب 🌐</a>
+            </div>
+        </div>
 
-    <!-- الموقع الثامن --> 
-    <div class="card">
-        <div class="card-title">موقع #08: بطاقة تهنئة رقمية تفاعلية</div> 
-        <div class="card-desc">بطاقات مناسبات وأعياد مصممة بلغة الويب مع تأثيرات جميلة.</div> 
-        <div class="price-row">
-            <span class="price">3 ريال</span> 
-            <span class="coming-soon">قريباً...</span>
-        </div> 
-    </div> 
+        <!-- المشروع الثامن -->
+        <div class="project-card">
+            <div class="project-title">موقع #08: بطاقة تهنئة رقمية تفاعلية</div>
+            <div class="project-desc">بطاقات مناسبات وأعياد مصممة بلغة الويب مع تأثيرات حركية جميلة ومخصصة.</div>
+            <div class="project-footer">
+                <span class="price-tag">جاهز للبيع</span>
+                <a href="card.html" class="visit-btn">معاينة القالب 🌐</a>
+            </div>
+        </div>
 
-    <!-- الموقع التاسع --> 
-    <div class="card">
-        <div class="card-title">موقع #09: مكتبة الروابط والمصادر التعليمية</div> 
-        <div class="card-desc">دليل ويب مرتب يجمع أهم المواقع والروابط المفيدة للطلاب.</div> 
-        <div class="price-row">
-            <span class="price">3 ريال</span> 
-            <span class="coming-soon">قريباً...</span>
-        </div> 
-    </div> 
-</body> 
+        <!-- المشروع التاسع -->
+        <div class="project-card">
+            <div class="project-title">موقع #09: مكتبة الروابط والمصادر التعليمية</div>
+            <div class="project-desc">دليل ويب مرتب يجمع ويصنف أهم المواقع والروابط والمراجع المفيدة للطلاب.</div>
+            <div class="project-footer">
+                <span class="price-tag">جاهز للبيع</span>
+                <a href="library.html" class="visit-btn">معاينة القالب 🌐</a>
+            </div>
+        </div>
+
+        <div class="footer-note">
+            جميع الحقوق محفوظة © sar_linx | نظام قوالب الويب المستقلة 2026
+        </div>
+    </div>
+</body>
 </html>
