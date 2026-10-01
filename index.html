@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>sar_linx | لوحة التحكم الرئيسية للمشاريع</title>
+    <title>sar_linx | منصة المشاريع والأدوات الرقمية المتكاملة</title>
     <style>
         :root {
             --bg-color: #0f172a;
@@ -60,6 +60,8 @@
             align-items: center; 
             border-top: 1px solid var(--border-color); 
             padding-top: 12px; 
+            gap: 8px;
+            flex-wrap: wrap;
         }
         
         .price-tag { 
@@ -97,6 +99,16 @@
         }
         .project-btn:hover { background: var(--btn-project-hover); }
 
+        /* حاوية عرض الأقسام الداخلية لتشغيلها مباشرة */
+        .section-view {
+            display: none;
+            background: #111827;
+            border: 1px solid var(--accent-color);
+            border-radius: 10px;
+            padding: 15px;
+            margin-top: 10px;
+        }
+
         .footer-note { 
             text-align: center; 
             margin-top: 30px; 
@@ -119,7 +131,11 @@
             <div class="project-desc">واجهة ويب تفاعلية لعرض الفصول وقراءة القصص المصورة بتصميم فخم وسلس.</div>
             <div class="project-footer">
                 <span class="price-tag">جاهز للبيع</span>
-                <a href="manga.html" class="visit-btn">معاينة القالب 🌐</a>
+                <button class="visit-btn" onclick="toggleSection('manga-section')">معاينة القالب 🌐</button>
+            </div>
+            <div id="manga-section" class="section-view">
+                <h3>📖 قسم منصة المانجا</h3>
+                <p>هنا يتم عرض فصول المانجا والقصص المصورة بشكل تفاعلي.</p>
             </div>
         </div>
 
@@ -129,7 +145,11 @@
             <div class="project-desc">دليل ويب مرن لتنظيم وعرض ملفات الوسائط، الروابط، والمحتويات الرقمية.</div>
             <div class="project-footer">
                 <span class="price-tag">جاهز للبيع</span>
-                <a href="media_index.html" class="visit-btn">معاينة القالب 🌐</a>
+                <button class="visit-btn" onclick="toggleSection('media-section')">معاينة القالب 🌐</button>
+            </div>
+            <div id="media-section" class="section-view">
+                <h3>📁 قسم دليل الوسائط</h3>
+                <p>هنا تظهر قائمة الملفات، الفهارس، ومقاطع الفيديو والصور الخاصة بك.</p>
             </div>
         </div>
 
@@ -139,7 +159,11 @@
             <div class="project-desc">نموذج سيرة ذاتية تفاعلي يتيح للزائر تعبئة بياناته ونشرها بكل سهولة واحترافية.</div>
             <div class="project-footer">
                 <span class="price-tag">جاهز للبيع</span>
-                <a href="cv.html" class="visit-btn">معاينة القالب 🌐</a>
+                <button class="visit-btn" onclick="toggleSection('cv-section')">معاينة القالب 🌐</button>
+            </div>
+            <div id="cv-section" class="section-view">
+                <h3>📄 قسم السيرة الذاتية</h3>
+                <p>نموذج احترافي لعرض الخبرات والمهارات الشخصية.</p>
             </div>
         </div>
 
@@ -149,7 +173,11 @@
             <div class="project-desc">منصة تجميع روابط منصات التواصل والسابستاك في صفحة شخصية واحدة أنيقة.</div>
             <div class="project-footer">
                 <span class="price-tag">جاهز للبيع</span>
-                <a href="links.html" class="visit-btn">معاينة القالب 🌐</a>
+                <button class="visit-btn" onclick="toggleSection('links-section')">معاينة القالب 🌐</button>
+            </div>
+            <div id="links-section" class="section-view">
+                <h3>🔗 قسم شجرة الروابط</h3>
+                <p>روابط حساباتك ومنصاتك الاجتماعية في مكان واحد.</p>
             </div>
         </div>
 
@@ -159,7 +187,11 @@
             <div class="project-desc">سكربت تفاعلي متكامل لحساب الدرجات، المجموع، والنسبة والمعدل المدرسي.</div>
             <div class="project-footer">
                 <span class="price-tag">جاهز للبيع</span>
-                <a href="calc.html" class="visit-btn">معاينة القالب 🌐</a>
+                <button class="visit-btn" onclick="toggleSection('calc-section')">معاينة القالب 🌐</button>
+            </div>
+            <div id="calc-section" class="section-view">
+                <h3>🧮 قسم الآلة الحاسبة</h3>
+                <p>احسب معدلك الدرسي والنسبة المئوية بكل سهولة.</p>
             </div>
         </div>
 
@@ -169,17 +201,29 @@
             <div class="project-desc">تطبيق ويب صغير لتنظيم المهام، تحديد الأولويات، ومتابعة الإنجاز بكفاءة.</div>
             <div class="project-footer">
                 <span class="price-tag">جاهز للبيع</span>
-                <a href="todo.html" class="visit-btn">معاينة القالب 🌐</a>
+                <button class="visit-btn" onclick="toggleSection('todo-section')">معاينة القالب 🌐</button>
+            </div>
+            <div id="todo-section" class="section-view">
+                <h3>📝 قسم المهام اليومية</h3>
+                <p>أضف مهامك اليومية ونظم وقتك بكفاءة عالية.</p>
             </div>
         </div>
 
-        <!-- المشروع السابع (المعدل ليحتوي على زر رابط المشاريع وزر المعاينة) -->
+        <!-- المشروع السابع -->
         <div class="project-card">
             <div class="project-title">موقع #07: معرض المشاريع والبحوث التفاعلي</div>
             <div class="project-desc">صفحة ترحيبية وتفاعلية ممتدة للأسفل، مع إمكانية إرفاق الصور، البحوث، وتعديل بيانات الطالب.</div>
             <div class="project-footer">
-                <a href="welcome.html" class="project-btn">رابط المشاريع 🚀</a>
-                <a href="welcome2.html" class="visit-btn">معاينة القالب 🌐</a>
+                <button class="project-btn" onclick="toggleSection('welcome-section')">رابط المشاريع 🚀</button>
+                <button class="visit-btn" onclick="toggleSection('welcome2-section')">معاينة القالب 🌐</button>
+            </div>
+            <div id="welcome-section" class="section-view">
+                <h3>🚀 معرض المشاريع الرئيسي</h3>
+                <p>محتوى صفحة المشاريع والبحوث التفاعلية.</p>
+            </div>
+            <div id="welcome2-section" class="section-view">
+                <h3>🌐 معاينة القالب التفاعلي الثاني</h3>
+                <p>عرض تفصيلي إضافي لمعرض المشاريع.</p>
             </div>
         </div>
 
@@ -189,7 +233,11 @@
             <div class="project-desc">بطاقات مناسبات وأعياد مصممة بلغة الويب مع تأثيرات حركية جميلة ومخصصة.</div>
             <div class="project-footer">
                 <span class="price-tag">جاهز للبيع</span>
-                <a href="card.html" class="visit-btn">معاينة القالب 🌐</a>
+                <button class="visit-btn" onclick="toggleSection('card-section')">معاينة القالب 🌐</button>
+            </div>
+            <div id="card-section" class="section-view">
+                <h3>🎉 بطاقة التهنئة الرقمية</h3>
+                <p>تصاميم تأثيرات حركية للمناسبات السعيدة.</p>
             </div>
         </div>
 
@@ -199,7 +247,11 @@
             <div class="project-desc">دليل ويب مرتب يجمع ويصنف أهم المواقع والروابط والمراجع المفيدة للطلاب.</div>
             <div class="project-footer">
                 <span class="price-tag">جاهز للبيع</span>
-                <a href="library.html" class="visit-btn">معاينة القالب 🌐</a>
+                <button class="visit-btn" onclick="toggleSection('library-section')">معاينة القالب 🌐</button>
+            </div>
+            <div id="library-section" class="section-view">
+                <h3>📚 مكتبة المصادر التعليمية</h3>
+                <p>أهم المراجع والمواقع المفيدة للطلاب مرتبة ومنسقة.</p>
             </div>
         </div>
 
@@ -207,5 +259,16 @@
             جميع الحقوق محفوظة © sar_linx | نظام قوالب الويب المستقلة 2026
         </div>
     </div>
+
+    <script>
+        function toggleSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            if (section.style.display === "block") {
+                section.style.display = "none";
+            } else {
+                section.style.display = "block";
+            }
+        }
+    </script>
 </body>
 </html>
